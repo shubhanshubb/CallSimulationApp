@@ -100,6 +100,6 @@ Features
 Integrate a backend for managing contacts and call history.
 Add support for dynamic avatars and profile pictures.
 Author
-This project is developed by Shubhanshu Barnwal. For further queries, feel free to reach out via Contact:
+This project is developed by Shubhanshu Barnwal. For further queries, feel free to reach out via 
 
-<img alt="Email" src="https://img.shields.io/badge/-Email-D14836?logo=gmail&amp;logoColor=white">
+Contact: [![Email](https://img.shields.io/badge/-Email-D14836?logo=gmail&logoColor=white)](mailto:connect@shubhanshubb.dev)

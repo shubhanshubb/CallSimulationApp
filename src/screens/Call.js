@@ -16,7 +16,8 @@ const Call = ({route}) => {
   const [isMuted, setIsMuted] = useState(false);
   const [showCamera, setShowCamera] = useState(false);
   const [showCallingText, setShowCallingText] = useState(true);
-  const device = useCameraDevice('back');
+  const [devices, setDevices] = useState('front');
+  const device = useCameraDevice(devices);
 
   useEffect(() => {
     // Play default ringtone
@@ -60,7 +61,7 @@ const Call = ({route}) => {
   };
 
   const handleSwitchCamera = () => {
-    device === 'back' ? useCameraDevice('front') : useCameraDevice('back');
+    setDevices(devices === 'front' ? 'back' : 'front');
   };
 
   return (

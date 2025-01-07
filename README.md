@@ -1,79 +1,152 @@
-This is a new [**React Native**](https://reactnative.dev) project, bootstrapped using [`@react-native-community/cli`](https://github.com/react-native-community/cli).
+Call Simulation App
 
-# Getting Started
+Project Overview
 
->**Note**: Make sure you have completed the [React Native - Environment Setup](https://reactnative.dev/docs/environment-setup) instructions till "Creating a new application" step, before proceeding.
+This React Native application simulates an audio and video call interface with features like contact selection, call initiation, switching between audio and video calls, and in-call controls. It provides a functional demonstration of calling interactions within a mobile app environment.
 
-## Step 1: Start the Metro Server
+Features
 
-First, you will need to start **Metro**, the JavaScript _bundler_ that ships _with_ React Native.
+Contact List
 
-To start Metro, run the following command from the _root_ of your React Native project:
+Displays a list of contacts with names and numbers.
 
-```bash
-# using npm
-npm start
+Provides call and video call buttons for each contact.
 
-# OR using Yarn
-yarn start
-```
+Incoming Call Simulation
 
-## Step 2: Start your Application
+Automatically simulates an incoming call 2 seconds after launching the app.
 
-Let Metro Bundler run in its _own_ terminal. Open a _new_ terminal from the _root_ of your React Native project. Run the following command to start your _Android_ or _iOS_ app:
+Audio and Video Call Modes
 
-### For Android
+Switch between audio and video calls.
 
-```bash
-# using npm
-npm run android
+Access the device’s camera during video calls.
 
-# OR using Yarn
-yarn android
-```
+In-Call Controls
 
-### For iOS
+Mute/unmute the microphone.
 
-```bash
-# using npm
-npm run ios
+Switch between front and back cameras.
 
-# OR using Yarn
-yarn ios
-```
+End the call.
 
-If everything is set up _correctly_, you should see your new app running in your _Android Emulator_ or _iOS Simulator_ shortly provided you have set up your emulator/simulator correctly.
+Calling UI
 
-This is one way to run your app — you can also run it directly from within Android Studio and Xcode respectively.
+Displays caller's name and avatar during the call.
 
-## Step 3: Modifying your App
+"Calling..." indicator during call setup.
 
-Now that you have successfully run the app, let's modify it.
+Installation and Setup
 
-1. Open `App.tsx` in your text editor of choice and edit some lines.
-2. For **Android**: Press the <kbd>R</kbd> key twice or select **"Reload"** from the **Developer Menu** (<kbd>Ctrl</kbd> + <kbd>M</kbd> (on Window and Linux) or <kbd>Cmd ⌘</kbd> + <kbd>M</kbd> (on macOS)) to see your changes!
+Clone the repository:
 
-   For **iOS**: Hit <kbd>Cmd ⌘</kbd> + <kbd>R</kbd> in your iOS Simulator to reload the app and see your changes!
+git clone <repository_url>
+cd <repository_name>
 
-## Congratulations! :tada:
+Install dependencies:
 
-You've successfully run and modified your React Native App. :partying_face:
+npm install
 
-### Now what?
+Link required native dependencies:
 
-- If you want to add this new React Native code to an existing application, check out the [Integration guide](https://reactnative.dev/docs/integration-with-existing-apps).
-- If you're curious to learn more about React Native, check out the [Introduction to React Native](https://reactnative.dev/docs/getting-started).
+npx react-native link react-native-vision-camera
+npx react-native link react-native-sound
 
-# Troubleshooting
+Run the app:
 
-If you can't get this to work, see the [Troubleshooting](https://reactnative.dev/docs/troubleshooting) page.
+For iOS:
 
-# Learn More
+npx react-native run-ios
 
-To learn more about React Native, take a look at the following resources:
+For Android:
 
-- [React Native Website](https://reactnative.dev) - learn more about React Native.
-- [Getting Started](https://reactnative.dev/docs/environment-setup) - an **overview** of React Native and how setup your environment.
-- [Learn the Basics](https://reactnative.dev/docs/getting-started) - a **guided tour** of the React Native **basics**.
-- [Blog](https://reactnative.dev/blog) - read the latest official React Native **Blog** posts.
-- [`@facebook/react-native`](https://github.com/facebook/react-native) - the Open Source; GitHub **repository** for React Native.
+npx react-native run-android
+
+How to Use
+
+View Contacts:
+
+Launch the app to see a list of pre-defined contacts.
+
+Simulated Incoming Call:
+
+Wait for 2 seconds to see a modal simulating an incoming call.
+
+Accept or reject the call.
+
+Audio and Video Calls:
+
+Tap the phone icon for an audio call or the video icon for a video call.
+
+In-Call Controls:
+
+Mute/unmute using the microphone icon.
+
+Switch cameras using the switch camera icon.
+
+End the call using the end call icon.
+
+File Structure
+
+App.js: Entry point of the application, sets up navigation.
+
+AppNavigator.js: Handles navigation between screens (Home and Call).
+
+Home.js: Displays the contact list and handles incoming call simulation.
+
+Call.js: Manages the call interface, including video rendering and in-call controls.
+
+constants/SingleTextAvatar.js: Utility for rendering user avatars.
+
+Dependencies
+
+Navigation: @react-navigation/native, @react-navigation/stack
+
+Icons: react-native-vector-icons
+
+Camera: react-native-vision-camera
+
+Sound: react-native-sound
+
+Technical Details
+
+State Management
+
+useState is used to manage states like callType, isMuted, and modal visibility.
+
+useEffect is utilized for lifecycle events such as playing ringtones and requesting camera permissions.
+
+Permissions
+
+Camera permissions are requested dynamically using react-native-vision-camera.
+
+UI Components
+
+Contact List: Rendered using FlatList.
+
+Modal: Displays incoming call simulation.
+
+Camera: Integrated using react-native-vision-camera.
+
+Demo
+
+Include a link or embed a video showing the app in action.
+
+Future Improvements
+
+Enhancements:
+
+Add real-time calling functionality using WebRTC.
+
+Include animations for transitions and in-call events.
+
+Features:
+
+Integrate a backend for managing contacts and call history.
+
+Add support for dynamic avatars and profile pictures.
+
+Author
+
+This project is developed by Shubhanshu Barnwal. For further queries, feel free to reach out via Contact: [![Email](https://img.shields.io/badge/-Email-D14836?logo=gmail&logoColor=white)](mailto:connect@shubhanshubb.dev).
+
